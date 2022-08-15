@@ -1,4 +1,5 @@
 import { io } from "socket.io-client";
+
 let socket;
 
 const urls = {
@@ -10,8 +11,16 @@ const connect = (chainId) => {
   socket = io(urls[chainId]);
   return socket;
 }
-
-export const listenForPreview = async (/** @type {Number} */ id, /** @type {Number} */ chainId) => {
+/**
+ * Listens for a result preview emitted by the Randomizer Sequencer websocket.
+ * 
+ * @async
+ * @function listenForPreview
+ * @param {number} id - The Randomizer request id to listen for
+ * @param {number} chainId - The numerical chain id to connect to the right Sequencer server
+ * @return {Promise<string>}
+ */
+export const listenForPreview = async (id, chainId) => {
   return new Promise((resolve, reject) => {
     if (!socket) socket = connect(chainId);
     socket.on("connect", () => {
