@@ -1,0 +1,28 @@
+{
+  "name": "@randomizer.ai/sequencer-client",
+  "version": "0.1.0",
+  "description": "Listen for Randomizer's VRF result previews in real-time",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RandomizerAi/sequencer-client.git"
+  },
+  "keywords": [
+    "randomizer",
+    "randomizer.ai",
+    "vrf",
+    "rng",
+    "ethereum",
+    "solidity",
+    "arbitrum"
+  ],
+  "author": "Randomizer (https://randomizer.ai)",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/RandomizerAi/sequencer-client/issues"
+  },
+  "homepage": "https://github.com/RandomizerAi/sequencer-client#readme"
+}
