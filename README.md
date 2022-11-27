@@ -7,7 +7,7 @@ You can update your user's interface using the real-time preview (e.g. show the 
 Result previews are extremely likely to be the final on-chain result, since the sequencer can submit the result if the beacon does not submit it in time.
 
 ## Installation
-`npm i @randomizer.ai/sequencer-client`
+`npm i @randomizer.ai/realtime-client`
 
 ## Example
 
@@ -16,7 +16,7 @@ For a full example, see [Realtime Coinflip Example Game](https://github.com/rand
 ### Front-end
 
 ```js
-import { listenForPreview } from "@randomizer.ai/sequencer-client";
+import { listenForPreview } from "@randomizer.ai/realtime-client";
 import ethers from "ethers";
 const RANDOMIZER_ADDRESS = "0x5fa929b6646e3Bd428dB64e190a421f73587e33F";
 

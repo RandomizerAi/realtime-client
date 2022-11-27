@@ -1,5 +1,5 @@
 {
-  "name": "@randomizer.ai/sequencer-client",
+  "name": "@randomizer.ai/realtime-client",
   "version": "0.1.1",
   "description": "Listen for Randomizer's VRF result previews in real-time",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RandomizerAi/sequencer-client.git"
+    "url": "git+https://github.com/RandomizerAi/realtime-client.git"
   },
   "keywords": [
     "randomizer",
@@ -22,7 +22,7 @@
   "author": "Randomizer (https://randomizer.ai)",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/RandomizerAi/sequencer-client/issues"
+    "url": "https://github.com/RandomizerAi/realtime-client/issues"
   },
-  "homepage": "https://github.com/RandomizerAi/sequencer-client#readme"
+  "homepage": "https://github.com/RandomizerAi/realtime-client#readme"
 }
