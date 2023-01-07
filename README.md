@@ -18,6 +18,8 @@ For a full example, see [Realtime Coinflip Example Game](https://github.com/rand
 ```js
 import { listenForPreview } from "@randomizer.ai/realtime-client";
 import ethers from "ethers";
+
+// See https://randomizer.ai/docs for contract addresses
 const RANDOMIZER_ADDRESS = "0x5fa929b6646e3Bd428dB64e190a421f73587e33F";
 
 // Get the event fired by Randomizer that returns the request ID
@@ -122,4 +124,3 @@ contract CoinFlip {
     }
 }
 ```
-
