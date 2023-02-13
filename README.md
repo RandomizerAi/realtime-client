@@ -61,7 +61,7 @@ const flip = (headsOrTails) => {
 
 ```cs
 interface IRandomizer {
-    function request(uint256 callbackGasLimit) external returns (uint128);
+    function request(uint256 callbackGasLimit) external returns (uint256);
 
     function clientWithdrawTo(address to, uint256 amount) external;
 }
@@ -78,15 +78,15 @@ contract CoinFlip {
 
     event FlipResult(
         address indexed player,
-        uint128 indexed id,
+        uint256 indexed id,
         uint256 seed,
         bool prediction,
         bool result
     );
 
-    mapping(uint128 => CoinFlipGame) coinFlipGames;
-    mapping(address => uint128[]) userToGames;
-    mapping(uint128 => bool) gameToHeadsTails;
+    mapping(uint256 => CoinFlipGame) coinFlipGames;
+    mapping(address => uint256[]) userToGames;
+    mapping(uint256 => bool) gameToHeadsTails;
 
     IRandomizer private randomizer;
 
@@ -97,7 +97,7 @@ contract CoinFlip {
     // Called by player to initiate a coinflip
     // Using randomizer's request id as the game id
     function flip(bool prediction) external {
-        uint128 id = IRandomizer(randomizer).request(20000);
+        uint256 id = IRandomizer(randomizer).request(20000);
         userToGames[msg.sender].push(id);
         coinFlipGames[id] = CoinFlipGame(msg.sender, prediction, false, 0);
         emit Flip(msg.sender, id, prediction);
@@ -110,7 +110,7 @@ contract CoinFlip {
     }
 
     // The callback function called by randomizer when the random bytes are ready
-    function randomizerCallback(uint128 _id, bytes32 _value) external {
+    function randomizerCallback(uint256 _id, bytes32 _value) external {
         require(
             msg.sender == address(randomizer),
             "Only the randomizer contract can call this function"
