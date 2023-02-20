@@ -20,7 +20,8 @@ import { listenForPreview } from "@randomizer.ai/realtime-client";
 import ethers from "ethers";
 
 // See https://randomizer.ai/docs for contract addresses
-const RANDOMIZER_ADDRESS = "0x5fa929b6646e3Bd428dB64e190a421f73587e33F";
+// Using Randomizer's Arbitrum Goerli contract address here:
+const RANDOMIZER_ADDRESS = "0x923096Da90a3b60eb7E12723fA2E1547BA9236Bc";
 
 // Get the event fired by Randomizer that returns the request ID
 // headsOrTails is a boolean
@@ -97,7 +98,7 @@ contract CoinFlip {
     // Called by player to initiate a coinflip
     // Using randomizer's request id as the game id
     function flip(bool prediction) external {
-        uint256 id = IRandomizer(randomizer).request(20000);
+        uint256 id = IRandomizer(randomizer).request(100000);
         userToGames[msg.sender].push(id);
         coinFlipGames[id] = CoinFlipGame(msg.sender, prediction, false, 0);
         emit Flip(msg.sender, id, prediction);
