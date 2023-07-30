@@ -3,9 +3,10 @@ import { io } from "socket.io-client";
 let socket;
 
 const urls = {
+  80001: "wss://mumbai.vrf.sh",
   42161: "wss://arb-one.vrf.sh",
-  421613: "wss://arb-goerli.vrf.sh",
-  80001: "wss://mumbai.vrf.sh"
+  42170: "wss://nova.vrf.sh",
+  421613: "wss://arb-goerli.vrf.sh"
 }
 
 const connect = (chainId) => {
