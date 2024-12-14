@@ -6,17 +6,19 @@ const urls = {
   80001: "wss://mumbai.vrf.sh",
   42161: "wss://arb-one.vrf.sh",
   42170: "wss://nova.vrf.sh",
-  421613: "wss://arb-goerli.vrf.sh"
-}
+  421613: "wss://arb-goerli.vrf.sh",
+  1996: "wss://sanko.vrf.sh",
+};
 
 const connect = (chainId) => {
-  if (urls[chainId] === undefined) throw new Error(`Randomizer Sequencer: Chain ID ${chainId} not supported`)
+  if (urls[chainId] === undefined)
+    throw new Error(`Randomizer Sequencer: Chain ID ${chainId} not supported`);
   socket = io(urls[chainId]);
   return socket;
-}
+};
 /**
  * Listens for a result preview emitted by the Randomizer Sequencer websocket.
- * 
+ *
  * @async
  * @function listenForPreview
  * @param {number} id - The Randomizer request id to listen for
@@ -37,4 +39,4 @@ export const listenForPreview = async (id, chainId) => {
       }
     });
   });
-}
+};
